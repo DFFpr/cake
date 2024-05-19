@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+   
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Group</title>
+    
+
+    <link rel="stylesheet" href="style.css">
+    <style>
+        #Team_Members {
+            margin-top: 210px;
+            background-color: rgb(221, 220, 220);
+            border: 2px dashed black;
+        }
+        
+        #members-list {
+            text-align: center;
+        }
+  
+  
+  
+  </style>
+</head>
+
+<body>
+
+    <header class="header">
+        <div class="logoContent">
+            <h1 class="logoName"> Cake Now</h1>
+        </div>
+        <nav class="navbar">
+            <a href="index.html">home</a>
+            <a href="product.html">product</a>
+            <a href="video.html">Video</a>
+            <a href="review.html">review</a>
+            <a href="members.html">Members</a>
+            <a href="contcatUs.html">contact</a>
+        </nav>
+        <div class="icon">
+            <i class="fas fa-bars" id="menu-bar"></i>
+        </div>
+    </header>
+
+    <section class="contact" id="Team_Members">
+
+        <h1 class="heading">Group Members </h1>
+
+        <div class="row">
+
+            <div class="team_members" style="font-size: medium;">
+
+                <ul id="members-list">
+                 
+
+                    <li >احمد محمد مباركي (441003613)</li>                  
+                   <li >احمد جابر الفيفي(441005557)</li>
+                   
+
+                </ul>
+            </div>
+        </div>
+   <script>const members = [" احمد محمد مباركي (441003613) ", "احمد جابر الفيفي(44100557) ", " ", "  " ];
+
+
+    function shuffle(array) {
+        for (let i = array.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [array[i], array[j]] = [array[j], array[i]];
+        }
+        return array;
+    }
+    
+    
+    function displayMembers() {
+        const memberList = document.getElementById('members');
+        memberList.innerHTML = ''; 
+    
+        const shuffledMembers = shuffle(members.slice()); 
+    
+        shuffledMembers.forEach(member => {
+            const li = document.createElement('li');
+            li.textContent = member;
+            memberList.appendChild(li);
+        });
+    }
+    
+    
+    document.addEventListener('DOMContentLoaded', displayMembers);</script>
+   
+   
+   </section>
+</body>
+
+</html>
